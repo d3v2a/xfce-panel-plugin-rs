@@ -1,0 +1,24 @@
+[package]
+name = "xfce-panel-demo"
+description = "Demo xfce4-panel plugin written in Rust with the xfce-panel crate"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license = "MIT"
+authors.workspace = true
+homepage.workspace = true
+repository.workspace = true
+publish = false
+
+[lib]
+name = "demo"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+xfce-panel = { workspace = true, features = ["settings"] }
+
+[build-dependencies]
+xfce-panel = { workspace = true, features = ["build"] }
+
+[lints]
+workspace = true

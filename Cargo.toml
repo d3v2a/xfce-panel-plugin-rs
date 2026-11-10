@@ -1,0 +1,47 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/xfce-panel-sys",
+    "crates/xfce-panel-macros",
+    "crates/xfce-panel",
+    "crates/xfce-panel-demo",
+    "crates/xfce-panel-hello",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.95"
+license = "MIT"
+authors = ["d3v2a"]
+homepage = "https://github.com/d3v2a/xfce-panel-plugin-rs"
+repository = "https://github.com/d3v2a/xfce-panel-plugin-rs"
+readme = "readme.md"
+
+
+[workspace.dependencies]
+libc = "0.2"
+pkg-config = "0.3"
+glib = "0.22"
+glib-sys = "0.22"
+gobject-sys = "0.22"
+gtk = "0.19"
+gtk-sys = "0.19"
+gdk-sys = "0.19"
+xfconf = "0.3"
+serde = "1"
+serde_json = "1"
+async-channel = "2.5.0"
+futures-executor = "0.3"
+proc-macro2 = "1"
+quote = "1"
+syn = "3"
+xfce-panel-sys = { path = "crates/xfce-panel-sys", version = "0.1.0" }
+xfce-panel = { path = "crates/xfce-panel", version = "0.1.0" }
+xfce-panel-macros = { path = "crates/xfce-panel-macros", version = "0.1.0" }
+
+[workspace.lints.rust]
+unsafe_op_in_unsafe_fn = "deny"
+
+[profile.release]
+lto = "thin"

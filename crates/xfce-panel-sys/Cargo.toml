@@ -1,0 +1,30 @@
+[package]
+name = "xfce-panel-sys"
+description = "FFI bindings to the libxfce4panel 2.0 plugin API (xfce4-panel)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+homepage.workspace = true
+repository.workspace = true
+readme.workspace = true
+links = "xfce4panel-2.0"
+keywords = ["xfce", "panel", "ffi", "bindings"]
+categories = ["api-bindings", "external-ffi-bindings"]
+
+[dependencies]
+libc.workspace = true
+glib-sys.workspace = true
+gobject-sys.workspace = true
+gtk-sys.workspace = true
+gdk-sys.workspace = true
+
+[build-dependencies]
+pkg-config.workspace = true
+
+[dev-dependencies]
+libc.workspace = true
+
+[lints]
+workspace = true

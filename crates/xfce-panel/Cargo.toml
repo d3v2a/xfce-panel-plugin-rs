@@ -1,0 +1,29 @@
+[package]
+name = "xfce-panel"
+description = "Safe Rust API to write xfce4-panel plugins (trait + macro, on top of xfce-panel-sys)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+homepage.workspace = true
+repository.workspace = true
+readme.workspace = true
+keywords = ["xfce", "panel", "plugin", "gui"]
+categories = ["api-bindings", "gui"]
+
+[features]
+# Build-script helpers (desktop file generation). No extra dependency.
+build = []
+
+settings = ["dep:xfconf", "dep:xfce-panel-macros"]
+
+[dependencies]
+xfce-panel-sys.workspace = true
+glib.workspace = true
+gtk.workspace = true
+xfconf = { workspace = true, optional = true }
+xfce-panel-macros = { workspace = true, optional = true }
+
+[lints]
+workspace = true
